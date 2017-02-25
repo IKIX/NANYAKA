@@ -1,0 +1,146 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="ja">
+        <meta name="keywords" content="nanyaka, webdev, wbdv">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="We are nanyaka webdev, a web development worker - willingness but who cares? ">
+        <title>
+            HOME - NANYAKA WebDev
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+            $(function(){
+                $("li a").click(function(){
+                    var url = this.href;
+                    var parts = url.split("#");
+                    var target = parts[1];
+                    var target_offset = $("#"+target).offset();
+                    var target_top = target_offset.top;
+                    $('html, body').animate({
+                        scrollTop:target_top
+                    }, 800);
+                });
+                $("li a").bind('touchstart', function(){
+                    var url = this.href;
+                    var parts = url.split("#");
+                    var target = parts[1];
+                    var target_offset = $("#"+target).offset();
+                    var target_top = target_offset.top;
+                    $('html, body').animate({
+                        scrollTop:target_top
+                    }, 1200);
+                });
+                $("span").bind({
+                    touchstart: function(){
+                        $(this).removeClass().addClass("touchstart");
+                    }
+                });
+                $("span").bind({
+                    touchend: function(){
+                        $(this).removeClass().addClass("touchend");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <a id="head" href="#">NANYAKA WebDev</a>
+            </h1>
+        </header>
+        <nav id="hdnv">
+            <ul>
+                <li>
+                    <a href="#site">SITES</a>
+                </li>
+                <li>
+                    <a href="#cv">CV</a>
+                </li>
+                <li>
+                    <a href="#tech">TECHNOLOGIES</a>
+                </li>
+                <li>
+                    <a href="#res">RESEARCHES</a>
+                </li>
+                <li>
+                    <a href="#test">CERTIFICATIONS</a>
+                </li>
+            </ul>
+        </nav>
+        <section id="site">
+            <h1>SITES</h1>
+            <article>
+                <a href="http://nanyaka.info/sql/"><p>The SQL</p></a>
+            </article>
+            <article>
+                <a href="http://nanyaka.info/tecne/"><p>Tecneics</p></a>
+            </article>
+            <article>
+                <a href="http://nanyaka.info/tml/"><p>TML</p></a>
+            </article>
+        </section>
+        <section id="cv">
+            <h1>CV</h1>
+            <article>
+                <p>2012 Master of Science</p>
+                <p>2010 Bachelor of Library and Information Science</p>
+            </article>
+        </section>
+        <section id="tech">
+            <h1>TECHNOLOGIES</h1>
+            <article>
+                <p>Web Development: <span>HTML5</span> / <span>CSS3</span> / <span>JavaScript</span> / <span>jQuery</span> / <span>PHP</span> / <span>SQL</span> / <span>WordPress</span></p>
+                <p>Visual Design: <span>fonts</span> / <span>color</span> / <span>layout</span></p>
+            </article>
+        </section>
+        <section id="res">
+            <h1>RESEARCHES</h1>
+            <article>
+                <p><span>Complex Geometry</span></p>
+                    <p><span>Graph Algorithm</span></p>
+                    <p><span>Orbi Theory</span></p>
+            </article>
+        </section>
+        <section id="test">
+            <h1>CERTIFICATIONS</h1>
+            <article>
+                <a href="http://www.webdesign.gr.jp/"><p>2nd grade Certified Skilled Worker of Web Design</p></a>
+                <a href="https://www.microsoft.com/ja-jp/learning/exam-70-480.aspx"><p>MCP 70-480</p></a>
+                <a href="https://www.microsoft.com/ja-jp/learning/mos-master-certification.aspx"><p>MOS Master</p></a>
+            </article>
+        </section>
+        <aside>
+            <article>
+                
+            </article>
+        </aside>
+        <footer>
+            <p>&copy; 2017 NANYAKA WebDev</p>
+            <nav id="ftnv">
+                <ul>
+                    <li>
+                        <a href="#site">SITES</a>
+                    </li>
+                    <li>
+                        <a href="#cv">CV</a>
+                    </li>
+                    <li>
+                        <a href="#tech">TECHNOLOGIES</a>
+                    </li>
+                    <li>
+                        <a href="#res">RESEARCHES</a>
+                    </li>
+                    <li>
+                        <a href="#test">CERTIFICATIONS</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>
